@@ -5,7 +5,7 @@ class Display_Screen {
 
   displayUserData(profileData) {
     return Scaffold(
-      backgroundColor: Color(0xff008891),
+      backgroundColor: Colors.teal,
       appBar: AppBar(
         backgroundColor: Colors.teal[400],
         title: Text("Socialite"),
