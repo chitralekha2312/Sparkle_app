@@ -41,69 +41,74 @@ class _WelcomeScreenState extends State<WelcomeScreen>
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: animation.value,
-      body: Padding(
-        padding: EdgeInsets.symmetric(horizontal: 24.0),
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          crossAxisAlignment: CrossAxisAlignment.stretch,
-          children: <Widget>[
-            Center(
-              child: Row(
-                children: <Widget>[
-                  Text(
-                      '#',
-                  style: TextStyle(
-                    color: Colors.white,
-                    fontSize: 50,
-                    fontWeight: FontWeight.w900,
-                    fontFamily: 'Vampiro'
-                  ),),
-                  ColorizeAnimatedTextKit(
-                    text: ['Socialite'],
-                    textStyle: TextStyle(
-                        fontSize: 50.0,
-                        fontWeight: FontWeight.w900,
-                        fontFamily: 'Vampiro',
-                        color: Colors.white),
-                    colors: [
-                      Colors.white,
-                      Colors.blue,
-                      Colors.yellow,
-                      Colors.red,
-                    ],
-                    textAlign: TextAlign.center,
+      body: Container(
+        decoration: BoxDecoration(
+          image: DecorationImage(
+            image: AssetImage('images/background.png')
+          )
+        ),
+        child: Padding(
+          padding: EdgeInsets.symmetric(horizontal: 24.0),
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            crossAxisAlignment: CrossAxisAlignment.stretch,
+            children: <Widget>[
+              Center(
+                child: Row(
+                  children: <Widget>[
+                    Hero(
+                    tag: 'logo',
+                    child: Container(
+                      child: Image.asset('images/logo.png'),
+                      height: 60,
+                   ),
                   ),
-                ],
+                    ColorizeAnimatedTextKit(
+                      text: ['Sparkle'],
+                      textStyle: TextStyle(
+                          fontSize: 50.0,
+                          fontWeight: FontWeight.w900,
+                          fontFamily: 'Vampiro',
+                          color: Colors.white),
+                      colors: [
+                        Colors.white,
+                        Colors.blue,
+                        Colors.yellow,
+                        Colors.red,
+                      ],
+                      textAlign: TextAlign.center,
+                    ),
+                  ],
+                ),
               ),
-            ),
-            SizedBox(
-              height: 48.0,
-            ),
-            SignInButton(
-              Buttons.Facebook,
-              onPressed: () {
-                Navigator.pushNamed(context, LoginScreen.id);
-              },
-              text: 'Sign In with Facebook',
-              elevation: 6,
-              padding: EdgeInsets.all(15),
-              shape: RoundedRectangleBorder(
-                  borderRadius: BorderRadius.all(Radius.circular(20))),
-            ),
-            SizedBox(height: 20),
-            SignInButton(
-              Buttons.LinkedIn,
-              onPressed: () {
-                Navigator.pushNamed(context, LinkedInPage.id);
-              },
-              text: 'Sign In with LinkedIn',
-              elevation: 6,
-              padding: EdgeInsets.all(15),
-              shape: RoundedRectangleBorder(
-                  borderRadius: BorderRadius.all(Radius.circular(20))),
-            )
-          ],
+              SizedBox(
+                height: 48.0,
+              ),
+              SignInButton(
+                Buttons.Facebook,
+                onPressed: () {
+                  Navigator.pushNamed(context, LoginScreen.id);
+                },
+                text: 'Sign In with Facebook',
+                elevation: 6,
+                padding: EdgeInsets.all(15),
+                shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.all(Radius.circular(20))),
+              ),
+              SizedBox(height: 20),
+              SignInButton(
+                Buttons.LinkedIn,
+                onPressed: () {
+                  Navigator.pushNamed(context, LinkedInPage.id);
+                },
+                text: 'Sign In with LinkedIn',
+                elevation: 6,
+                padding: EdgeInsets.all(15),
+                shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.all(Radius.circular(20))),
+              )
+            ],
+          ),
         ),
       ),
     );
