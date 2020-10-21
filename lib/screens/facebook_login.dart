@@ -90,27 +90,12 @@ class _LoginScreenState extends State<LoginScreen> {
         mainAxisAlignment: MainAxisAlignment.center,
         crossAxisAlignment: CrossAxisAlignment.stretch,
         children: <Widget>[
-          Row(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: <Widget>[
-              Text('#',
-                style: TextStyle(
-                    fontSize: 50.0,
-                    fontWeight: FontWeight.w900,
-                    fontFamily: 'Vampiro',
-                    color: Colors.white),
-              ),
-              RotateAnimatedTextKit(
-                text: ['Socialite'],
-                textStyle: TextStyle(
-                    fontSize: 50.0,
-                    fontWeight: FontWeight.w900,
-                    fontFamily: 'Vampiro',
-                    color: Colors.white),
-                textAlign: TextAlign.start,
-                isRepeatingAnimation: false,
-              ),
-            ],
+          Hero(
+            tag: 'logo',
+            child: Container(
+              child: Image.asset('images/logo.png'),
+              height: 300,
+            ),
           ),
           SizedBox(
             height: 10,
