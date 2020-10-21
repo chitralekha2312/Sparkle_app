@@ -1,6 +1,6 @@
 # sparkle
 
-A new Flutter application.
+A social media integration created using flutter which allows user to login through Facebook and LinkedIn, and displays relevent information and profile data.
 
 ## Getting Started
 
